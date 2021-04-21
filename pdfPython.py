@@ -69,6 +69,7 @@ while  i<len(names):
     new_pdf = PdfFileReader(packet)
     # read your existing PDF
     # change CERTIFICADO.pdf for the original template that you want to use
+	# change pdf's path
     existing_pdf = PdfFileReader(open("pdfPython/originalPDF/CERTIFICADO.pdf", "rb"))
     #print(existing_pdf.getPage(0).mediaBox)
     output = PdfFileWriter()
@@ -78,6 +79,7 @@ while  i<len(names):
     page.mergePage(page2)
     output.addPage(page)
     pddFinal = names[i]
+	# change pdf's path
     pdfurl = "pdfPython/pdfs/"+pddFinal+".pdf"
     outputStream = open(pdfurl, "wb")
     output.write(outputStream)
